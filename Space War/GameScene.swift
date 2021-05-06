@@ -13,10 +13,13 @@ class GameScene: SKScene {
     var spaceShip: SKSpriteNode!
     
     override func didMove(to view: SKView) {
+        //background node
         let spaceBackground = SKSpriteNode(imageNamed: "spaceBackground")
-        spaceBackground.size = CGSize(width: UIScreen.main.bounds.width * 3, height: UIScreen.main.bounds.height * 3)
+        spaceBackground.size = self.frame.size
+        spaceBackground.zPosition = -1
         addChild(spaceBackground)
         
+        //ship node
         spaceShip = SKSpriteNode(imageNamed: "spaceShip")
         addChild(spaceShip)
     }
